@@ -5,6 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=plastic&logo=pandas&logoColor=white)
 **`Psycopg2`**
+**`SQL`**
 
 ### Содержание ###
 
@@ -101,7 +102,7 @@
 
 ### Результат ###
 
-[**`Project_2.ipynb`**](Project_2.ipynb)&nbsp;&mdash; Файл в формате ноутбука с
+[**`Project-2.ipynb`**](Project-2.ipynb)&nbsp;&mdash; Файл в формате ноутбука с
 решениями:
 
 1. Номер задания.
