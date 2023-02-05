@@ -1,4 +1,12 @@
-# Анализ вакансий из HeadHunter #
+<h3 align="center">:gb: Disclaimer</h3>
+
+:warning: This test task was performed for a company with predominantly
+Russian-speaking specialists. Therefore, all explanations, comments and other
+texts are provided exclusively in Russian.
+
+----
+
+# :ru: Анализ вакансий из HeadHunter #
 
 ## (Преобразование, исследование и очистка данных) ##
 
