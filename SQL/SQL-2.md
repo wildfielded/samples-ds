@@ -46,3 +46,32 @@ WHERE
 ```
 
 ----
+
+#### **Задание 2** ####
+
+Написать запрос, который выведет:
+
+- число различных дополнительных типов (столбец `additional_types_count`);
+- среднее число очков здоровья (столбец `avg_hp`);
+- сумму показателей атаки (столбец `attack_sum`) в разбивке по основным типам
+(столбец `primary_type`).
+
+Отсортировать результат по числу дополнительных типов в порядке убывания, при
+равенстве&nbsp;&mdash; по основному типу в алфавитном порядке.
+
+Столбцы к выводу (обратить внимание на порядок!): `primary_type`,
+`additional_types_count`, `avg_hp`, `attack_sum`.
+
+```sql
+SELECT
+    DISTINCT type1 AS primary_type,
+    COUNT(DISTINCT type2) AS additional_types_count,
+    AVG(hp) AS avg_hp,
+    SUM(attack) AS attack_sum
+FROM sql.pokemon
+GROUP BY primary_type
+ORDER BY additional_types_count DESC,
+         primary_type
+```
+
+----
