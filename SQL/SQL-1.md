@@ -187,3 +187,42 @@ OFFSET 19 LIMIT 28
 ```
 
 ----
+
+#### **Задание 13** ####
+
+Написать запрос, который выводит столбцы **&laquo;Название фильма&raquo;**
+(`movie_title`), **&laquo;Режиссёр&raquo;** (`director`),
+**&laquo;Сценарист&raquo;** (`screenwriter`), **&laquo;Актёры&raquo;**
+(`actors`). Оставить только те фильмы, у которых:
+
+- рейтинг между 8 и 8.5 (включительно) ИЛИ год выхода в прокат до 1990;
+- есть описание;
+- название начинается не с буквы **`Т`**;
+- название состоит ровно из 12 символов.
+
+Оставить только ТОП-7 по рейтингу.
+
+```sql
+SELECT
+    movie_title AS "Название фильма",
+    director AS "Режиссёр",
+    screenwriter AS "Сценарист",
+    actors AS "Актёры"
+FROM sql.kinopoisk
+WHERE
+    (
+        (rating BETWEEN 8 AND 8.5)
+        OR
+        year < 1990
+    )
+    AND
+    overview IS NOT NULL
+    AND
+    movie_title NOT LIKE 'Т%'
+    AND
+    movie_title LIKE '____________'
+ORDER BY rating DESC
+LIMIT 7
+```
+
+----
