@@ -120,3 +120,26 @@ LIMIT 3
 ```
 
 ----
+
+#### **Задание 5** ####
+
+Написать запрос, который выведет основной и дополнительный типы покемонов и
+средние значения по каждому показателю (столбцы `avg_hp`, `avg_attack`,
+`avg_defense`, `avg_speed`).    
+Оставить только те пары типов, у которых сумма этих четырёх показателей более
+**400**.
+
+```sql
+SELECT
+    type1,
+    type2,
+    AVG(hp) AS avg_hp,
+    AVG(attack) AS avg_attack,
+    AVG(defense) AS avg_defense,
+    AVG(speed) AS avg_speed
+FROM sql.pokemon
+GROUP BY type1, type2
+HAVING (AVG(hp) + AVG(attack) + AVG(defense) + AVG(speed)) > 400
+```
+
+----
