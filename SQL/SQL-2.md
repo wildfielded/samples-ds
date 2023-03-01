@@ -98,3 +98,25 @@ HAVING
 ```
 
 ----
+
+#### **Задание 4** ####
+
+Написать запрос, который выводит столбцы с основным типом (`primary_type`) и
+числом покемонов этого типа (`pokemon_count`) для тех покемонов, чьё имя
+(`name`) начинается с **`S`**.    
+Оставить только типы, у которых средний показатель защиты больше **80**.    
+Вывести только **ТОП-3** типов по числу покемонов в них.
+
+```sql
+SELECT
+    type1 AS primary_type,
+    COUNT(*) AS pokemon_count
+FROM sql.pokemon
+WHERE name LIKE 'S%'
+GROUP BY primary_type
+HAVING AVG(defense) > 80
+ORDER BY pokemon_count DESC
+LIMIT 3
+```
+
+----
