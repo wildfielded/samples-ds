@@ -20,3 +20,21 @@
     away_team_goals     количество голов гостевой команды
 
 ----
+
+#### **Задание 1** ####
+
+Написать запрос, который выведет сезон (`season`), общее количество забитых
+мячей домашними (`total_home_goals`) и гостевыми (`total_away_goals`) командами.    
+Отсортировать по столбцу с сезоном в порядке возрастания.
+
+```sql
+SELECT
+    season,
+    SUM(home_team_goals) AS total_home_goals,
+    SUM(away_team_goals) AS total_away_goals
+FROM sql.matches
+GROUP BY season
+ORDER BY season
+```
+
+----
