@@ -54,3 +54,24 @@ FROM
 ```
 
 ----
+
+#### **Задание 3** ####
+
+Написать запрос, который выведет таблицу с результатами матчей, содержащую:
+
+- названия гостевых команд (`long_name`);
+- количество забитых мячей домашней команды (`home_team_goals`);
+- количество забитых мячей гостевой команды (`away_team_goals`).
+
+```sql
+SELECT
+    long_name,
+    home_team_goals,
+    away_team_goals
+FROM
+    sql.teams,
+    sql.matches
+WHERE away_team_api_id = api_id
+```
+
+----
