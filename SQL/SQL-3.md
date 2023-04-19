@@ -112,3 +112,23 @@ ORDER BY match_id
 ```
 
 ----
+
+#### **Задание 6** ####
+
+Написать запрос, который выведет столбцы: **id** матча, короткое название
+домашней команды (`home_short`), короткое название гостевой команды
+(`away_short`).    
+Отсортировать запрос по возрастанию **id** матча.
+
+```sql
+SELECT
+    m.id,
+    h.short_name AS home_short,
+    a.short_name AS away_short
+FROM sql.matches AS m
+JOIN sql.teams AS h ON m.home_team_api_id = h.api_id
+JOIN sql.teams AS a ON m.away_team_api_id = a.api_id
+ORDER BY m.id
+```
+
+----
