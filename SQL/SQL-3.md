@@ -95,3 +95,20 @@ JOIN sql.matches ON away_team_api_id = api_id
 ```
 
 ----
+
+#### **Задание 5** ####
+
+Написать запрос, который выведет два столбца: **id** матча (`match_id`) и **id**
+домашней команды (`team_id`), а затем отсортировать по **id** матча в порядке
+возрастания значений.
+
+```sql
+SELECT
+    m.id AS match_id,
+    t.id AS team_id
+FROM sql.teams AS t
+JOIN sql.matches AS m ON m.home_team_api_id = t.api_id
+ORDER BY match_id
+```
+
+----
