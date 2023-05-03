@@ -197,3 +197,22 @@ ORDER BY t.long_name
 ```
 
 ----
+
+#### **Задание 10** ####
+
+Используя `LEFT JOIN`, вывести список уникальных названий команд, содержащихся в
+таблице `matches`. Отсортировать список в алфавитном порядке.
+
+```sql
+SELECT
+    DISTINCT t.long_name
+FROM sql.teams AS t
+LEFT JOIN sql.matches AS m ON
+    t.api_id = m.home_team_api_id
+    OR
+    t.api_id = m.away_team_api_id
+WHERE m.id IS NOT NULL
+ORDER BY t.long_name
+```
+
+----
