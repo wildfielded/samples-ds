@@ -151,3 +151,31 @@ ORDER BY m.id
 ```
 
 ----
+
+#### **Задание 8** ####
+
+Написать запрос, чтобы вывести **id** матчей, короткое название домашней
+команды (`home_short`), короткое название гостевой команды (`away_short`) для
+матчей сезона **2011/2012**, в которых участвовала команда с названием
+**Liverpool**. Отсортировать по **id** матча в порядке возрастания.
+
+```sql
+SELECT
+    m.id,
+    h.short_name AS home_short,
+    a.short_name AS away_short
+FROM sql.matches AS m
+JOIN sql.teams AS h ON h.api_id = m.home_team_api_id
+JOIN sql.teams AS a ON a.api_id = m.away_team_api_id
+WHERE
+    (
+        h.long_name = 'Liverpool'
+        OR
+        a.long_name = 'Liverpool'
+    )
+    AND
+    m.season = '2011/2012'
+ORDER BY m.id
+```
+
+----
