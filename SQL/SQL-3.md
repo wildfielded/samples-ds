@@ -117,8 +117,7 @@ ORDER BY match_id
 
 Написать запрос, который выведет столбцы: **id** матча, короткое название
 домашней команды (`home_short`), короткое название гостевой команды
-(`away_short`).    
-Отсортировать запрос по возрастанию **id** матча.
+(`away_short`). Отсортировать запрос по возрастанию **id** матча.
 
 ```sql
 SELECT
@@ -128,6 +127,26 @@ SELECT
 FROM sql.matches AS m
 JOIN sql.teams AS h ON m.home_team_api_id = h.api_id
 JOIN sql.teams AS a ON m.away_team_api_id = a.api_id
+ORDER BY m.id
+```
+
+----
+
+#### **Задание 7** ####
+
+Написать запрос, который выведет полное название команды (`long_name`),
+количество голов домашней команды (`home_goal`) и количество голов гостевой
+команды (`away_goal`) в матчах, где домашней командой были команды с коротким
+названием **`GEN`**. Отсортировать запрос по **id** матча в порядке возрастания.
+
+```sql
+SELECT
+    t.long_name,
+    m.home_team_goals AS home_goal,
+    m.away_team_goals AS away_goal
+FROM sql.teams AS t
+JOIN sql.matches AS m ON m.home_team_api_id = t.api_id
+WHERE t.short_name = 'GEN'
 ORDER BY m.id
 ```
 
