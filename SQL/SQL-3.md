@@ -216,3 +216,26 @@ ORDER BY t.long_name
 ```
 
 ----
+
+#### **Задание 11** ####
+
+Используя `LEFT JOIN`, написать запрос, который выведет полное название команды
+(`long_name`), количество матчей, в которых участвовала команда,&nbsp;&mdash;
+домашних и гостевых (`matchess_cnt`). Отсортировать по количеству матчей в
+порядке возрастания, затем&nbsp;&mdash; по названию команды в алфавитном
+порядке.
+
+```sql
+SELECT
+    t.long_name,
+    COUNT(m.id) AS matches_cnt
+FROM sql.teams AS t
+LEFT JOIN sql.matches AS m ON
+    t.api_id = m.home_team_api_id
+    OR
+    t.api_id = m.away_team_api_id
+GROUP BY t.id
+ORDER BY matches_cnt, t.long_name
+```
+
+----
