@@ -239,3 +239,21 @@ ORDER BY matches_cnt, t.long_name
 ```
 
 ----
+
+#### **Задание 12** ####
+
+Написать запрос, который выведет все возможные уникальные комбинации коротких
+названий домашней команды (`home_team`) и коротких названий гостевой команды
+(`away_team`). Отсортировать запрос по первому и второму столбцам.
+
+```sql
+SELECT
+    DISTINCT
+        t1.short_name AS home_team,
+        t2.short_name AS away_team
+FROM sql.teams AS t1
+CROSS JOIN sql.teams AS t2
+ORDER BY home_team, away_team
+```
+
+----
