@@ -316,3 +316,29 @@ LIMIT 10
 ```
 
 ----
+
+#### **Задание 6.4** ####
+
+Вывести количество матчей между командами **Real Madrid CF** и **FC Barcelona**.
+
+```sql
+SELECT
+    COUNT(*)
+FROM sql.matches AS m
+JOIN sql.teams AS h ON h.api_id = m.home_team_api_id
+JOIN sql.teams AS a ON a.api_id = m.away_team_api_id
+WHERE
+    (
+        h.long_name = 'Real Madrid CF'
+        AND
+        a.long_name = 'FC Barcelona'
+    )
+    OR
+    (
+        h.long_name = 'FC Barcelona'
+        AND
+        a.long_name = 'Real Madrid CF'
+    )
+```
+
+----
