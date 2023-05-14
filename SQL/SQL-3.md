@@ -257,3 +257,22 @@ ORDER BY home_team, away_team
 ```
 
 ----
+
+#### **Задание 13** ####
+
+Написать запрос, который выведет список уникальных полных названий команд
+(`long_name`), игравших в гостях в матчах сезона **2012/2013**.
+Отсортировать список в алфавитном порядке.
+
+```sql
+SELECT
+    DISTINCT t.long_name
+FROM sql.teams AS t
+JOIN sql.matches AS m ON
+    t.api_id = m.away_team_api_id
+    AND
+    m.season = '2012/2013'
+ORDER BY t.long_name
+```
+
+----
