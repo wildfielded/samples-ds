@@ -276,3 +276,23 @@ ORDER BY t.long_name
 ```
 
 ----
+
+#### **Задание 14** ####
+
+Написать запрос, который выведет полное название команды (`long_name`) и общее
+количество матчей (`matches_cnt`), сыгранных командой **Inter** в домашних
+матчах.
+
+```sql
+SELECT
+    t.long_name,
+    COUNT(*) AS matches_cnt
+FROM sql.teams AS t
+JOIN sql.matches AS m ON
+    t.api_id = m.home_team_api_id
+    AND
+    t.long_name = 'Inter'
+GROUP BY t.long_name
+```
+
+----
