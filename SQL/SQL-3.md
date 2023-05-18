@@ -317,7 +317,7 @@ LIMIT 10
 
 ----
 
-#### **Задание 6.4** ####
+#### **Задание 16** ####
 
 Вывести количество матчей между командами **Real Madrid CF** и **FC Barcelona**.
 
@@ -339,6 +339,29 @@ WHERE
         AND
         a.long_name = 'Real Madrid CF'
     )
+```
+
+----
+
+#### **Задание 17** ####
+
+Написать запрос, который выведет название команды (`long_name`), сезон
+(`season`) и суммарное количество забитых голов в домашних матчах
+(`total_goals`). Оставить только те строки, в которых суммарное количество голов
+менее десяти.    
+Отсортировать запрос по названию команды, а затем по сезону.
+
+```sql
+SELECT
+    t.long_name,
+    m.season,
+    SUM(m.home_team_goals) AS total_goals
+FROM sql.teams AS t
+JOIN sql.matches AS m ON
+    t.api_id = m.home_team_api_id
+GROUP BY t.long_name, m.season
+HAVING SUM(m.home_team_goals) < 10
+ORDER BY t.long_name, m.season
 ```
 
 ----
