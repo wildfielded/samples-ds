@@ -5,3 +5,13 @@
 ![Схема датасета](schema4.png)
 
 ----
+
+### city ###
+
+    city_id     INTEGER     уникальный идентификатор города, первичный ключ
+    city_name   TEXT        название города
+    state       TEXT        штат, к которому относится город
+    population  INTEGER     население города
+    area        NUMERIC     площадь города
+
+----
