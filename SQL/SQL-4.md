@@ -28,3 +28,16 @@
     city_id         INTEGER     идентификатор города, внешний ключ к таблице city
 
 ----
+
+### driver ###
+
+    driver_id       INTEGER     уникальный идентификатор водителя, первичный ключ
+    first_name      TEXT        имя водителя
+    last_name       TEXT        фамилия водителя
+    address         TEXT        адрес водителя
+    zip_code        INTEGER     почтовый индекс водителя
+    phone           TEXT        телефон водителя
+    city_id         INTEGER     идентификатор города водителя, внешний ключ
+                                к таблице city
+
+----
