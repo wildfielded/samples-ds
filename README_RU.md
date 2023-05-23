@@ -8,8 +8,8 @@
 
 ## Тестовые задания ##
 
-1. [**`Test-hh1`**](https://github.com/wildfielded/samples-ds/tree/master/Test-hh1)&nbsp;&mdash;
-Анализ вакансий из HeadHunter (Преобразование, исследование и очистка данных)
+1. [**`Анализ резюме из HeadHunter`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;&mdash;
+Преобразование, исследование и очистка данных.
 
     ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
     ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=plastic&logo=numpy&logoColor=white)

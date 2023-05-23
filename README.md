@@ -8,9 +8,8 @@
 
 ## Test tasks ##
 
-1. [**`Test-hh1`**](https://github.com/wildfielded/samples-ds/tree/master/Test-hh1)&nbsp;&mdash;
-Analysis of CV from [**HeadHunter**](https://hh.ru) dataset (Data
-transformation, exploration and cleaning)
+1. [**`Analysis of CV`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;&mdash;
+Data transformation, exploration and cleaning. Sample dataset from [**HeadHunter**](https://hh.ru).
 
     ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
     ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=plastic&logo=numpy&logoColor=white)
