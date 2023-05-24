@@ -8,7 +8,7 @@
 
 ## Тестовые задания ##
 
-1. [**`Анализ резюме из HeadHunter`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;&mdash;
+1. [**`Анализ резюме из HeadHunter`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;(:warning:&nbsp;Другой&nbsp;репозиторий)&nbsp;&mdash;
 Преобразование, исследование и очистка данных.
 
     ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)

@@ -8,7 +8,7 @@
 
 ## Test tasks ##
 
-1. [**`Analysis of CV`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;&mdash;
+1. [**`Analysis of CV`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/01-20-PROJECT-1)&nbsp;(:warning:&nbsp;Another&nbsp;repo)&nbsp;&mdash;
 Data transformation, exploration and cleaning. Sample dataset from [**HeadHunter**](https://hh.ru).
 
     ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
