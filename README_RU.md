@@ -17,8 +17,8 @@
     ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=plastic&logo=Matplotlib&logoColor=black)
     **`Seaborn`**
 
-2. [**`Test-hh2`**](https://github.com/wildfielded/samples-ds/tree/master/Test-hh2)&nbsp;&mdash;
-Анализ вакансий из HeadHunter (Подгрузка новых данных, уточнение анализа)
+2. [**`Анализ вакансий из HeadHunter`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/02-29-PROJECT-2)&nbsp;(:warning:&nbsp;Другой&nbsp;репозиторий)&nbsp;&mdash;
+Подгрузка новых данных, уточнение анализа.
 
     ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
     ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=plastic&logo=pandas&logoColor=white)
