@@ -38,6 +38,19 @@ Predict car price.
     **`Seaborn`**
     **`LightAutoML`**
 
+4. [**`Kaggle competition`**](https://github.com/stalkspectrum/sf-ds-course-all/tree/master/03-38-PROJECT-3)&nbsp;(:warning:&nbsp;Another&nbsp;repo)&nbsp;&mdash;
+Predict hotel rate from [**`booking.com`**](https://www.booking.com)
+(Exploratory Data Analysis and Feature Engineering).
+
+    ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=plastic&logo=kaggle&logoColor=white)
+    ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=plastic&logo=numpy&logoColor=white)
+    ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=plastic&logo=pandas&logoColor=white)
+    ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=plastic&logo=scipy&logoColor=%white)
+    ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=plastic&logo=scikit-learn&logoColor=white)
+    ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=plastic&logo=Matplotlib&logoColor=black)
+    **`Seaborn`**
+    **`NLTK`**
+
 ----
 
 ## Small exercises and tasks from interviews ##
