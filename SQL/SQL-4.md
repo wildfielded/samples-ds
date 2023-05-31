@@ -25,7 +25,8 @@
     address         TEXT        адрес
     zip             INTEGER     почтовый индекс
     phone           TEXT        телефон
-    city_id         INTEGER     идентификатор города, внешний ключ к таблице city
+    city_id         INTEGER     идентификатор города, внешний ключ к таблице
+                                city
 
 ----
 
@@ -56,10 +57,10 @@
     cust_id     INTEGER     идентификатор клиента, которому отправлена доставка,
                             внешний ключ к таблице customer
     weight      NUMERIC     вес посылки
-    truck_id    INTEGER     идентификатор грузовика, на котором отправлена доставка,
-                            внешний ключ к таблице truck
-    driver_id   INTEGER     идентификатор водителя, который осуществлял доставку,
-                            внешний ключ к таблице driver
+    truck_id    INTEGER     идентификатор грузовика, на котором отправлена
+                            доставка, внешний ключ к таблице truck
+    driver_id   INTEGER     идентификатор водителя, который осуществлял
+                            доставку, внешний ключ к таблице driver
     city_id     INTEGER     идентификатор города в который совершена доставка,
                             внешний ключ к таблице city
     ship_date   DATE        дата доставки
@@ -111,6 +112,46 @@ WHERE s.ship_date BETWEEN '2017-01-01' AND '2017-12-31'
 GROUP BY c.cust_name
 ORDER BY cnt DESC
 LIMIT 1
+```
+
+----
+
+#### **Задание 2** ####
+
+Написать запрос, который создает уникальный алфавитный справочник всех городов,
+штатов, имён водителей и производителей грузовиков. Результатом запроса должны
+быть два столбца: название и тип объекта (`city`, `state`, `driver`, `truck`).
+
+Отсортировать список по названию объекта, а затем&nbsp;&mdash; по типу.
+
+```sql
+SELECT
+    city_name AS object_name,
+    'city' AS object_type
+FROM sql.city
+
+UNION
+
+SELECT
+    state,
+    'state'
+FROM sql.city
+
+UNION
+
+SELECT
+    first_name,
+    'driver'
+FROM sql.driver
+
+UNION
+
+SELECT
+    make,
+    'truck'
+FROM sql.truck
+
+ORDER BY object_name, object_type
 ```
 
 ----
