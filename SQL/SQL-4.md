@@ -65,3 +65,52 @@
     ship_date   DATE        дата доставки
 
 ----
+
+#### **Задание 1** ####
+
+Название города с максимальным весом единичной доставки.
+
+```sql
+SELECT c.city_name
+FROM sql.shipment AS s
+JOIN sql.city AS c ON s.city_id = c.city_id
+ORDER BY s.weight DESC
+LIMIT 1
+```
+
+Сколько различных производителей грузовиков перечислено в таблице **truck**?
+
+```sql
+SELECT COUNT(DISTINCT make)
+FROM sql.truck
+```
+
+Как зовут водителя (`first_name`), который совершил наибольшее количество
+доставок одному клиенту?
+
+```sql
+SELECT
+    d.first_name,
+    COUNT(*) AS cnt
+FROM sql.shipment AS s
+JOIN sql.driver AS d ON s.driver_id = d.driver_id
+GROUP BY s.driver_id, s.cust_id, d.first_name
+ORDER BY cnt DESC
+LIMIT 1
+```
+
+Имя клиента, получившего наибольшее количество доставок за 2017 год.
+
+```sql
+SELECT
+    c.cust_name,
+    COUNT(*) AS cnt
+FROM sql.shipment AS s
+JOIN sql.customer AS c ON s.cust_id = c.cust_id
+WHERE s.ship_date BETWEEN '2017-01-01' AND '2017-12-31'
+GROUP BY c.cust_name
+ORDER BY cnt DESC
+LIMIT 1
+```
+
+----
