@@ -155,3 +155,23 @@ ORDER BY object_name, object_type
 ```
 
 ----
+
+#### **Задание 3** ####
+
+Написать запрос, который соберёт имена всех упомянутых городов и штатов с
+таблицы **city**. Результатом запроса должен быть один столбец `object_name`,
+отсортированный в алфавитном порядке.
+
+```sql
+SELECT city_name AS object_name
+FROM sql.city
+
+UNION ALL
+
+SELECT state
+FROM sql.city
+
+ORDER BY object_name
+```
+
+----
