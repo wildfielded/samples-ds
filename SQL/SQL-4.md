@@ -198,3 +198,32 @@ ORDER BY object_name
 ```
 
 ----
+
+#### **Задание 5** ####
+
+Написать запрос, который объединит в себе все почтовые индексы водителей и их
+телефоны в единый столбец-справочник `contact`. Также добавьте столбец с именем
+водителя `first_name` и столбец `contact_type` с типом контакта (`phone` или
+`zip` в зависимости от типа).    
+Отсортировать список по столбцу с контактными данными в порядке возрастания, а
+затем&nbsp;&mdash; по имени водителя.
+
+```sql
+SELECT
+    zip_code::text AS contact,
+    first_name,
+    'zip' AS contact_type
+FROM sql.driver
+
+UNION ALL
+
+SELECT
+    phone::text,
+    first_name,
+    'phone'
+FROM sql.driver
+
+ORDER BY contact, first_name
+```
+
+----
