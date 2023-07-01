@@ -253,3 +253,40 @@ ORDER BY date_period DESC
 ```
 
 ----
+
+#### **Задание 7** ####
+
+Написать запрос, который выведет все города и штаты, в которых они расположены,
+а также информацию о том, была ли осуществлена доставка в этот город:
+
+- если в город была осуществлена доставка, то выводится 'доставка осуществлялась';
+- если нет&nbsp;&mdash; выводится 'доставка не осуществлялась'.
+
+Столбцы к выводу: `city_name`, `state`, `shipping_status`.    
+Отсортировать в алфавитном порядке по городу, а затем&nbsp;&mdash; по штату.
+
+```sql
+SELECT
+    c.city_name AS city_name,
+    c.state AS state,
+    'доставка осуществлялась' AS shipping_status
+FROM sql.city AS c
+LEFT JOIN sql.shipment AS s ON c.city_id = s.city_id
+GROUP BY c.city_id
+HAVING COUNT(s.ship_id) > 0
+
+UNION ALL
+
+SELECT
+    cc.city_name,
+    cc.state,
+    'доставка не осуществлялась'
+FROM sql.city AS cc
+LEFT JOIN sql.shipment AS ss ON cc.city_id = ss.city_id
+GROUP BY cc.city_id
+HAVING COUNT(ss.ship_id) = 0
+
+ORDER BY city_name, state
+```
+
+----
