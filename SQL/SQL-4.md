@@ -290,3 +290,40 @@ ORDER BY city_name, state
 ```
 
 ----
+
+#### **Задание 8** ####
+
+Написать запрос, который выводит два столбца: `city_name` и `shippings_fake`.
+Вывести города, куда совершались доставки. Пусть первый столбец содержит
+название города, а второй формируется так:
+
+- если в городе было более десяти доставок, вывести количество доставок в этот
+город как есть;
+- иначе&nbsp;&mdash; вывести количество доставок, увеличенное на пять.
+
+Отсортировать по убыванию получившегося &laquo;нечестного&raquo; количества
+доставок, а затем&nbsp;&mdash; по имени в алфавитном порядке.
+
+```sql
+SELECT
+    c.city_name AS city_name,
+    COUNT(s.ship_id) AS shippings_fake
+FROM sql.city AS c
+JOIN sql.shipment AS s ON c.city_id = s.city_id
+GROUP BY c.city_id
+HAVING COUNT(s.ship_id) > 10
+
+UNION ALL
+
+SELECT
+    cc.city_name,
+    COUNT(ss.ship_id) + 5
+FROM sql.city AS cc
+JOIN sql.shipment AS ss ON cc.city_id = ss.city_id
+GROUP BY cc.city_id
+HAVING COUNT(ss.ship_id) <= 10
+
+ORDER BY shippings_fake DESC, city_name
+```
+
+----
