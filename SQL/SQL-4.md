@@ -327,3 +327,32 @@ ORDER BY shippings_fake DESC, city_name
 ```
 
 ----
+
+#### **Задание 9** ####
+
+Написать запрос, который выберет наибольшее из значений:
+
+```text
+1000000;
+541;
+-500;
+100.
+```
+
+Столбец с результатом назвать `result`.
+
+```sql
+SELECT MAX(num) AS result
+FROM
+(
+    SELECT 1000000 as num
+    UNION
+    SELECT 541
+    UNION
+    SELECT -500
+    UNION
+    SELECT 100
+) AS n
+```
+
+----
