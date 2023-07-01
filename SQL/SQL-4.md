@@ -227,3 +227,29 @@ ORDER BY contact, first_name
 ```
 
 ----
+
+#### **Задание 6** ####
+
+Написать запрос, который выводит общее число доставок `total_shipments`, а также
+количество доставок в каждый день. Необходимые столбцы: `date_period`,
+`cnt_shipment`. Не забыть о единой типизации. Упорядочить по убыванию столбца
+`date_period`.
+
+```sql
+SELECT
+    s.ship_date::text AS date_period,
+    COUNT(*) AS cnt_shipment
+FROM sql.shipment AS s
+GROUP BY s.ship_date
+
+UNION ALL
+
+SELECT
+    'total_shipments',
+    COUNT(*)
+FROM sql.shipment
+
+ORDER BY date_period DESC
+```
+
+----
