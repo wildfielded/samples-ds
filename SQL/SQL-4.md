@@ -414,3 +414,23 @@ FROM
 ```
 
 ----
+
+#### **Задание 12** ####
+
+Вывести список zip-кодов, которые есть в таблице `sql.driver`, но отсутствуют в
+таблице `sql.customer`.    
+Отсортировать по возрастанию, столбец к выводу&nbsp;&mdash; `zip`.
+
+```sql
+SELECT d.zip_code AS zip
+FROM sql.driver AS d
+
+EXCEPT
+
+SELECT c.zip
+FROM sql.customer AS c
+
+ORDER BY 1
+```
+
+----
