@@ -434,3 +434,25 @@ ORDER BY 1
 ```
 
 ----
+
+#### **Задание 13** ####
+
+Написать запрос, который выведет список `id` городов, в которых есть и
+клиенты, и доставки, и водители.
+
+```sql
+SELECT c.city_id AS id
+FROM sql.customer AS c
+
+INTERSECT
+
+SELECT s.city_id
+FROM sql.shipment AS s
+
+INTERSECT
+
+SELECT d.city_id
+FROM sql.driver AS d
+```
+
+----
