@@ -456,3 +456,20 @@ FROM sql.driver AS d
 ```
 
 ----
+
+#### **Задание 14** ####
+
+Вывести zip-код, который есть как в таблице с клиентами, так и в таблице с
+водителями.
+
+```sql
+SELECT c.zip AS zip
+FROM sql.customer AS c
+
+INTERSECT
+
+SELECT d.zip_code
+FROM sql.driver AS d
+```
+
+----
