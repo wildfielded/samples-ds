@@ -473,3 +473,36 @@ FROM sql.driver AS d
 ```
 
 ----
+
+#### **Задание 15** ####
+
+Вывести города с максимальным и минимальным весом единичной доставки. Столбцы к
+выводу&nbsp;&mdash; `city_name`, `weight`.
+
+```sql
+(
+    SELECT
+        c.city_name AS city_name,
+        MAX(s.weight) AS weight
+    FROM sql.shipment AS s
+    JOIN sql.city AS c ON c.city_id = s.city_id
+    GROUP BY c.city_name
+    ORDER BY weight DESC
+    LIMIT 1
+)
+
+UNION ALL
+
+(
+    SELECT
+        cc.city_name,
+        MIN(ss.weight)
+    FROM sql.shipment AS ss
+    JOIN sql.city AS cc ON cc.city_id = ss.city_id
+    GROUP BY cc.city_name
+    ORDER BY MIN(ss.weight)
+    LIMIT 1
+)
+```
+
+----
