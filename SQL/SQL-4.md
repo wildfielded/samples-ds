@@ -527,3 +527,30 @@ ORDER BY mutual_id
 ```
 
 ----
+
+#### **Задание 17** ####
+
+Создать справочник, содержащий уникальные имена клиентов, которые являются
+производителями (`cust_type='manufacturer'`), и производителей грузовиков, а
+также описание объекта&nbsp;&mdash; **`КЛИЕНТ`** или **`ГРУЗОВИК`**. Столбцы к
+выводу&nbsp;&mdash; `object_name`, `object_description`.    
+Отсортировать по названию в алфавитном порядке.
+
+```sql
+SELECT
+    cust_name AS object_name,
+    'КЛИЕНТ' AS object_description
+FROM sql.customer
+WHERE cust_type = 'manufacturer'
+
+UNION
+
+SELECT
+    make,
+    'ГРУЗОВИК'
+FROM sql.truck
+
+ORDER BY object_name
+```
+
+----
