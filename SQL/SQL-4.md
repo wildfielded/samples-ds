@@ -506,3 +506,24 @@ UNION ALL
 ```
 
 ----
+
+#### **Задание 16** ####
+
+Вывести идентификационные номера клиентов (`cust_id`), которые совпадают с
+идентификационными номерами доставок (`ship_id`). Столбец к выводу&nbsp;&mdash;
+`mutual_id`.    
+Отсортировать по возрастанию.
+
+```sql
+SELECT cust_id AS mutual_id
+FROM sql.customer
+
+INTERSECT
+
+SELECT ship_id
+FROM sql.shipment
+
+ORDER BY mutual_id
+```
+
+----
