@@ -78,3 +78,28 @@ SELECT NOW() AT TIME ZONE 'America/Los_Angeles' AS now
 ```
 
 ----
+
+#### **Задание 2** ####
+
+Есть дата и время какого-то события и надо посмотреть, к какой дате оно
+относится для Москвы и для UTC? Использовать подзапрос:
+
+```text
+with x as 
+(
+select '2018-12-31 21:00:00+00'::timestamp with time zone ts
+)
+```
+
+и вывести дату в **ts** в Московском часовом поясе и в поясе UTC. Столбцы в
+выдаче: `dt_msk` (дата в московском часовом поясе), `dt_utc` (дата в UTC).
+
+```sql
+WITH x AS (SELECT '2018-12-31 21:00:00+00'::timestamp WITH TIME ZONE AS ts)
+SELECT
+    (ts AT TIME ZONE 'Europe/Moscow')::date AS dt_msk,
+    ts::date AS dt_utc
+FROM x
+```
+
+----
