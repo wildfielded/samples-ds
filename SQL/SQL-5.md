@@ -103,3 +103,22 @@ FROM x
 ```
 
 ----
+
+#### **Задание 3** ####
+
+Посчитать помесячную статистику по доставкам, используя функцию `extract`.    
+Написать запрос, который выведет год, месяц и количество доставок. Отсортировать
+по году и по месяцу в порядке возрастания. Столбцы в выдаче: `year_n` (номер
+года), `month_n` (номер месяца), `qty` (количество доставок).
+
+```sql
+SELECT
+    EXTRACT(YEAR FROM ship_date) AS year_n,
+    EXTRACT(MONTH FROM ship_date) AS month_n,
+    COUNT(*) AS qty
+FROM sql.shipment
+GROUP BY year_n, month_n
+ORDER BY year_n, month_n
+```
+
+----
