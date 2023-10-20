@@ -159,3 +159,24 @@ ORDER BY q
 ```
 
 ----
+
+#### **Задание 6** ####
+
+Оценить, в каком интервале совершались доставки в разных городах.    
+Написать запрос, который выведет разницу между последним и первым днём доставки
+по каждому городу. Отсортировать по первому и второму столбцам. Столбцы в
+выдаче: `city_name` (название города) и `days_active` (время от первой до
+последней доставки в днях).
+
+```sql
+SELECT
+    c.city_name,
+    MAX(s.ship_date) - MIN(s.ship_date) AS days_active
+FROM sql.shipment AS s
+JOIN sql.city AS c ON
+    s.city_id = c.city_id
+GROUP BY c.city_name
+ORDER BY c.city_name, days_active
+```
+
+----
