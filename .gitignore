@@ -16,4 +16,5 @@ ENV/
 VENV/
 env.bak/
 venv.bak/
-_Spurs/data/data1_churn.csv
+_Spurs/data/data*
+# !_Spurs/data/cat_variables*
