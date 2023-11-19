@@ -280,3 +280,29 @@ ORDER BY code
 ```
 
 ----
+
+#### **Задание 11** ####
+
+Подготовить географическую сводку для каждого города.    
+Написать SQL-запрос, который выведет описание региона в следующем формате:
+
+```text
+[city_name] is located in [state]. There's [population] people living there. Its area is [area]
+```
+
+Обратить внимание, что точку в конце ставить не нужно. Отсортировать по названию
+города в алфавитном порядке. Столбец к выдаче&nbsp;&mdash; `str` (сводка).
+Пример:
+
+```text
+Abilene is located in Texas. There's 115930 people living there. Its area is 105.10
+```
+
+```sql
+SELECT FORMAT($$%s is located in %s. There's %s people living there. Its area is %s$$,
+              city_name, state, population, area) AS str
+FROM sql.city
+ORDER BY city_name
+```
+
+----
