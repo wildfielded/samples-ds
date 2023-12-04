@@ -31,7 +31,7 @@
 
 ----
 
-#### **Задание 1** ####
+#### **Задание 09-1** ####
 
 Составить список книжных новинок. Новинками считаются все книги за последние
 пять лет. Необходимые данные: название книги, год издания, автор, жанр.
@@ -46,6 +46,27 @@ SELECT
     genre
 FROM other.books
 WHERE publishing_year >= 2016
+ORDER BY book_name
+```
+
+----
+
+#### **Задание 09-2** ####
+
+Отфильтровать запрос из предыдущего задания так, чтобы остались только те книги,
+у которых есть название.
+
+```sql
+SELECT
+    book_name,
+    publishing_year,
+    author,
+    genre
+FROM other.books
+WHERE
+    publishing_year >= 2016
+    AND
+    book_name IS NOT NULL
 ORDER BY book_name
 ```
 
