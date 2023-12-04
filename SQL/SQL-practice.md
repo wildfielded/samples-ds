@@ -19,6 +19,16 @@
 
 ### Схема таблицы other.book_orders ###
 
+    order_id        INTEGER     id заказа
+    order_date      DATE        дата заказа
+    book_id         INTEGER     id книги
+    quantity        INTEGER     количество книг в заказе
+    customer_id     INTEGER     id клиента
+    book_name       TEXT        название книги
+    author          TEXT        автор
+    genre           TEXT        жанр
+    sale_price      NUMERIC     цена
+
 ----
 
 #### **Задание 1** ####
