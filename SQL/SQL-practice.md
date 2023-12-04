@@ -2,11 +2,22 @@
 
 ----
 
-### Схема базы other.books ###
+### Схема таблицы other.books ###
+
+    publishing_year         INTEGER     год издания
+    book_name               TEXT        название книги
+    author                  TEXT        автор
+    language_code           TEXT        код языка, на котором написана книга
+    author_rating           TEXT        рейтинг автора
+    book_average_rating     NUMERIC     средний рейтинг книги
+    book_ratings_count      INTEGER     рейтинг книги
+    genre                   TEXT        жанр
+    publisher               TEXT        издательство
+    book_id                 INTEGER     id книги
 
 ----
 
-### Схема базы other.book_orders ###
+### Схема таблицы other.book_orders ###
 
 ----
 
