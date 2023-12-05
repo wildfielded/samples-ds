@@ -71,3 +71,268 @@ ORDER BY book_name
 ```
 
 ----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+#### **Задание 09-3** ####
+
+Выбрать значения рейтинга авторов, имеющиеся в базе.
+Отсортировать вывод по алфавиту.
+
+```sql
+SELECT DISTINCT author_rating
+FROM other.books
+ORDER BY author_rating
+```
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+#### **Задание 09-4** ####
+
+Выбрать только книги отличных авторов&nbsp;&mdash; оставить в выборке новых книг
+только авторов с рейтингом `Excellent`.
+
+```sql
+SELECT
+    book_name,
+    publishing_year,
+    author,
+    genre
+FROM other.books
+WHERE
+    publishing_year >= 2016
+    AND
+    book_name IS NOT NULL
+    AND
+    author_rating = 'Excellent'
+ORDER BY book_name
+```
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+#### **Задание 09-5** ####
+
+Добавить в имеющуюся выборку известных авторов (со значением рейтинга `Famous`).
+
+```sql
+SELECT
+    book_name,
+    publishing_year,
+    author,
+    genre
+FROM other.books
+WHERE
+    publishing_year >= 2016
+    AND
+    book_name IS NOT NULL
+    AND
+    author_rating IN ('Excellent', 'Famous')
+ORDER BY book_name
+```
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+#### **Задание 09-6** ####
+
+Определить, сколько книг из выборки попадает в каждую категорию рейтинга автора.
+Понадобятся следующие данные: рейтинг автора (`author_rating`), количество книг
+(`cnt`).
+Сортировка по алфавиту.
+
+```sql
+SELECT
+    author_rating,
+    COUNT(author_rating) AS cnt
+FROM other.books
+WHERE
+    publishing_year >= 2016
+    AND
+    book_name IS NOT NULL
+GROUP BY author_rating
+ORDER BY author_rating
+```
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+#### **Задание 09-7** ####
+
+Выбрать книги с рейтингом автора отличный (`Excellent`), известный (`Famous`) и
+новый (`Novice`). И в конце добавить строку об общем количестве книг. В выборке
+по-прежнему интересуют название книги, год издания, автор, жанр.
+
+```sql
+(
+    SELECT
+        book_name,
+        publishing_year,
+        author,
+        genre
+    FROM other.books
+    WHERE
+        publishing_year >= 2016
+        AND
+        book_name IS NOT NULL
+        AND
+        author_rating IN ('Excellent', 'Famous', 'Novice')
+    ORDER BY book_name
+)
+UNION ALL
+(
+    SELECT
+        'Total',
+        COUNT(*),
+        NULL,
+        NULL
+    FROM other.books
+    WHERE
+        publishing_year >= 2016
+        AND
+        book_name IS NOT NULL
+        AND
+        author_rating IN ('Excellent', 'Famous', 'Novice')
+)
+```
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
